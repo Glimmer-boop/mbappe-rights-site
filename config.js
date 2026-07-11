@@ -1,5 +1,5 @@
 window.MBAPPE_SITE_CONFIG = {
-  supabaseUrl: "https://YOUR_PROJECT.supabase.co",
-  supabaseAnonKey: "YOUR_SUPABASE_ANON_KEY",
+  supabaseUrl: "https://dqkhffhxbftpamtqbfox.supabase.co",
+  supabaseAnonKey: "sb_publishable_2cNNiqUDxvmGt5-F1M81Wg_pfECeTDK",
   tableName: "declarations"
 };
