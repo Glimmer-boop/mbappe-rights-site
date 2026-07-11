@@ -12,6 +12,9 @@ create table if not exists public.declarations (
 
 alter table public.declarations enable row level security;
 
+grant usage on schema public to anon;
+grant select, insert on public.declarations to anon;
+
 drop policy if exists "Public can read visible declarations" on public.declarations;
 create policy "Public can read visible declarations"
 on public.declarations
