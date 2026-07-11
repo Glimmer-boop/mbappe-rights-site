@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="姆巴佩，我们对得起你。一个严肃声明式的反讽应援宣言站。">
+  <title>姆巴佩，我们对得起你</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="hero">
+    <img class="hero-image" src="./assets/official-statement-hero.svg" alt="足球发布会声明桌">
+    <div class="hero-scrim"></div>
+    <nav class="topbar" aria-label="站点导航">
+      <a class="brand" href="#top" aria-label="回到首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Déclaration Officielle</span>
+      </a>
+      <a class="nav-link" href="#wall">宣言墙</a>
+    </nav>
+    <section id="top" class="hero-copy">
+      <p class="kicker">COMMUNIQUÉ SOLENNEL · 但不道歉</p>
+      <h1>姆巴佩，我们对得起你</h1>
+      <p class="lead">
+        经慎重复盘、反复观赛、逐帧确认，本委员会郑重宣布：
+        我们没有辜负你，我们只是爱得很有纪律。
+      </p>
+      <div class="hero-actions">
+        <a class="primary-link" href="#declaration-form">签署宣言</a>
+        <a class="secondary-link" href="#wall">查看公示</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="statement-band" aria-labelledby="notice-title">
+      <div class="official-stamp" aria-hidden="true">VALIDÉ</div>
+      <div class="statement-copy">
+        <p class="section-label">第一号严正声明</p>
+        <h2 id="notice-title">关于“我们是否对得起姆巴佩”的阶段性结论</h2>
+        <p>
+          本站拒绝草率忏悔，拒绝情绪性退让，拒绝把热爱包装成亏欠。
+          如需表达立场，请提交一份语气庄重、内容离谱、态度坚定的公开宣言。
+        </p>
+      </div>
+      <dl class="metrics" aria-label="宣言统计">
+        <div>
+          <dt>已公示宣言</dt>
+          <dd id="total-count">--</dd>
+        </div>
+        <div>
+          <dt>今日新增</dt>
+          <dd id="today-count">--</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="compose-section" aria-labelledby="compose-title">
+      <div class="compose-copy">
+        <p class="section-label">PROCÈS-VERBAL</p>
+        <h2 id="compose-title">生成一份正式但不太正经的宣言</h2>
+        <p>
+          选择一段模板，补上署名，然后交由本站永久性、象征性、云端同步地公示。
+        </p>
+      </div>
+
+      <form id="declaration-form" class="declaration-form" autocomplete="off">
+        <div class="template-row" role="group" aria-label="宣言模板">
+          <button type="button" class="template-button" data-template="after-review">赛后复盘式</button>
+          <button type="button" class="template-button" data-template="committee">委员会式</button>
+          <button type="button" class="template-button" data-template="romantic">含蓄嗑糖式</button>
+        </div>
+
+        <label for="nickname">署名</label>
+        <input id="nickname" name="nickname" maxlength="24" placeholder="例如：巴黎观察员">
+
+        <label for="content">公开宣言</label>
+        <textarea id="content" name="content" maxlength="280" rows="7" required></textarea>
+
+        <input class="site-field" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="form-footer">
+          <p id="char-count" class="char-count">0 / 280</p>
+          <button id="submit-button" type="submit">签署并公示</button>
+        </div>
+        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="wall" class="wall-section" aria-labelledby="wall-title">
+      <div class="wall-head">
+        <div>
+          <p class="section-label">AFFICHAGE PUBLIC</p>
+          <h2 id="wall-title">公开宣言墙</h2>
+        </div>
+        <button id="refresh-button" class="quiet-button" type="button">刷新公示</button>
+      </div>
+      <div id="setup-notice" class="setup-notice" hidden>
+        Supabase 尚未配置。填好 <code>config.js</code> 后，所有宣言会写入云端并在这里同步。
+      </div>
+      <div id="wall-list" class="wall-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Ce site ne présente aucune excuse. Il présente des preuves d'amour.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
